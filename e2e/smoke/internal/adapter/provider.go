@@ -1,4 +1,5 @@
 package adapter
 
+import "github.com/google/wire"
 
-// var ProviderSet = 
+var ProviderSet = wire.NewSet()

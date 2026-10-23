@@ -1,4 +1,4 @@
-module github.com/qhai-dev/e2e/smoke/rules_go_wire
+module github.com/qhai-dev/e2e/smoke
 
 go 1.27.3
 

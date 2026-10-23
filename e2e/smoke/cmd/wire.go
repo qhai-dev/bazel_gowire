@@ -1,11 +1,22 @@
 //go:build wireinject
 // +build wireinject
 
-// The build tag makes sure the stub is not built in the final build.
 package main
 
-import "github.com/google/wire"
+import (
+	"github.com/google/wire"
 
-func InitializeApp() {
-	panic(wire.Build())
+	"github.com/qhai-dev/e2e/library"
+	"github.com/qhai-dev/e2e/smoke/internal/adapter"
+	"github.com/qhai-dev/e2e/smoke/internal/application"
+	"github.com/qhai-dev/e2e/smoke/internal/infra"
+)
+
+func InitializeApp() (*library.App, error) {
+	panic(wire.Build(
+		infra.ProviderSet,
+		application.ProviderSet,
+		adapter.ProviderSet,
+		library.New,
+	))
 }
