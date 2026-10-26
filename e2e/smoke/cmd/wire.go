@@ -6,17 +6,16 @@ package main
 import (
 	"github.com/google/wire"
 
-	"github.com/qhai-dev/e2e/library"
-	"github.com/qhai-dev/e2e/smoke/internal/adapter"
-	"github.com/qhai-dev/e2e/smoke/internal/application"
-	"github.com/qhai-dev/e2e/smoke/internal/infra"
+	"github.com/qhai-dev/bazel_gowire/e2e/framework"
+	"github.com/qhai-dev/bazel_gowire/e2e/smoke/internal/adapter"
+	"github.com/qhai-dev/bazel_gowire/e2e/smoke/internal/application"
+	"github.com/qhai-dev/bazel_gowire/e2e/smoke/internal/infra"
 )
 
-func InitializeApp() (*library.App, error) {
+func InitializeApp() (*framework.App, error) {
 	panic(wire.Build(
 		infra.ProviderSet,
 		application.ProviderSet,
 		adapter.ProviderSet,
-		library.New,
 	))
 }
