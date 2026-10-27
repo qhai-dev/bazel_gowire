@@ -14,6 +14,7 @@ import (
 
 func InitializeApp() (*framework.App, error) {
 	panic(wire.Build(
+		framework.New,
 		infra.ProviderSet,
 		application.ProviderSet,
 		adapter.ProviderSet,

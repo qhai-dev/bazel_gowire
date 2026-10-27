@@ -1,10 +1,8 @@
 package framework
 
-import "fmt"
-
 type App struct {
 }
 
-func New() {
-	fmt.Println("hello e2e library")
+func New() *App {
+	return &App{}
 }

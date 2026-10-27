@@ -1,0 +1,8 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "framework",
+    srcs = ["app.go"],
+    importpath = "github.com/qhai-dev/bazel_gowire/e2e/framework",
+    visibility = ["//visibility:public"],
+)
